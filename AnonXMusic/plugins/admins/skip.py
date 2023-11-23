@@ -1,6 +1,6 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
-
+from strings.filters import command
 import config
 from AnonXMusic import YouTube, app
 from AnonXMusic.core.call import Anony
@@ -14,7 +14,7 @@ from config import BANNED_USERS
 
 
 @app.on_message(
-    filters.command(["skip", "cskip", "next", "cnext"]) & filters.group & ~BANNED_USERS
+    command(["skip", "cskip", "next", "cnext","/skip","/next","/cskip","دواتر","سکیپ"]) & ~filters.private & ~BANNED_USERS
 )
 @AdminRightsCheck
 async def skip(cli, message: Message, _, chat_id):
