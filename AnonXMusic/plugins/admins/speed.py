@@ -1,6 +1,6 @@
 from pyrogram import filters
 from pyrogram.types import Message
-
+from strings.filters import command
 from AnonXMusic import app
 from AnonXMusic.core.call import Anony
 from AnonXMusic.misc import SUDOERS, db
@@ -14,8 +14,8 @@ checker = []
 
 
 @app.on_message(
-    filters.command(["cspeed", "speed", "cslow", "slow", "playback", "cplayback"])
-    & filters.group
+    command(["/cspeed", "/speed", "/cslow", "/slow", "/playback", "/cplayback","speed","خێرای"])
+    & ~filters.private
     & ~BANNED_USERS
 )
 @AdminRightsCheck
