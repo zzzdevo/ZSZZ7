@@ -8,18 +8,18 @@ from config import LOGGER_ID
 async def play_logs(message, streamtype):
     if await is_on_off(2):
         logger_text = f"""
-<b>{app.mention} ᴘʟᴀʏ ʟᴏɢ</b>
+<b>{app.mention} ئاماری پەخشکردن</b>
 
-<b>ᴄʜᴀᴛ ɪᴅ :</b> <code>{message.chat.id}</code>
-<b>ᴄʜᴀᴛ ɴᴀᴍᴇ :</b> {message.chat.title}
-<b>ᴄʜᴀᴛ ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.chat.username}
+<b>ئایدی گرووپ :</b> <code>{message.chat.id}</code>
+<b>ناوی گرووپ :</b> {message.chat.title}
+<b>یوزەری گرووپ :</b> @{message.chat.username}
 
-<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>
-<b>ɴᴀᴍᴇ :</b> {message.from_user.mention}
-<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}
+<b>ئایدی بەکارهێنەر :</b> <code>{message.from_user.id}</code>
+<b>ناوی :</b> {message.from_user.mention}
+<b>یوزەری :</b> @{message.from_user.username}
 
-<b>ǫᴜᴇʀʏ :</b> {message.text.split(None, 1)[1]}
-<b>sᴛʀᴇᴀᴍᴛʏᴘᴇ :</b> {streamtype}"""
+<b>ڕیزکراو :</b> {message.text.split(None, 1)[1]}
+<b>جۆری پەخشکردن :</b> {streamtype}"""
         if message.chat.id != LOGGER_ID:
             try:
                 await app.send_message(
