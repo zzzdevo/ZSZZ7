@@ -13,6 +13,7 @@ psutil
 py-tgcalls==0.9.2
 pykeyboard
 pyrogram==2.0.106
+pyromod
 python-dotenv
 pyyaml
 requests
